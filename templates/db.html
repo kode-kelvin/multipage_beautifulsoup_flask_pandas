@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+<!-- endloaded -->
+{% block content %}
+<h1>Web Scrape Results</h1>
+
+{% for post in posts %}
+
+<div class="card-group">
+  <div class="card" style="width: 18rem">
+    <div class="card-body">
+      <h5 class="card-title">Book Title : {{post[1]}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted"
+        >Price: {{post[2]}}{{post[3]}}</h6
+      >
+      <h6 class="card-subtitle mb-2 text-muted">Status: {{post[4]}}</h6>
+      <p class="card-text">
+        Book URL: {{post[5]}} <br />
+        Image URL: {{post[6]}}</p
+      >
+
+      <a href="http://books.toscrape.com" target="_blank" class="card-link"
+        >Website Link</a
+      >
+    </div>
+
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
